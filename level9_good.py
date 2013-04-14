@@ -5,6 +5,7 @@ import StringIO
 import re
 
 def visit_authorized_url(url,name,passwd):
+	"""return the content a webpage which need to be authorized to visit"""
 	password_mgr = urllib2.HTTPPasswordMgrWithDefaultRealm()
 	password_mgr.add_password(None,url,name,passwd)
 	handler = urllib2.HTTPBasicAuthHandler(password_mgr)
